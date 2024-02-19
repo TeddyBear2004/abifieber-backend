@@ -1,6 +1,5 @@
 package de.thorge.abishop.routes;
 
-import de.thorge.abishop.tables.OrderPosition;
 import de.thorge.abishop.tables.Product;
 import io.javalin.http.Context;
 import org.hibernate.Session;
