@@ -1,0 +1,33 @@
+<hibernate-configuration>
+	<session-factory>
+		<!-- Database connection settings -->
+		<property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mariadb://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}</property>
+		<property name="hibernate.connection.username">${DATABASE_USER}</property>
+		<property name="hibernate.connection.password">${DATABASE_PASSWORD}</property>
+
+		<property name="connection.autocommit">true</property>
+
+		<!-- JDBC connection pool settings -->
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="hibernate.current_session_context_class">thread</property>
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- Mention annotated class packages -->
+		<mapping class="de.thorge.abishop.tables.User"/>
+		<mapping class="de.thorge.abishop.tables.Product"/>
+		<mapping class="de.thorge.abishop.tables.Order"/>
+		<mapping class="de.thorge.abishop.tables.OrderPosition"/>
+	</session-factory>
+</hibernate-configuration>
