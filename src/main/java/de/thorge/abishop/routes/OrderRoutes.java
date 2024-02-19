@@ -64,7 +64,7 @@ public class OrderRoutes {
             Transaction transaction = session.beginTransaction();
             session.persist(position);
             transaction.commit();
-            ctx.status(201);
+            ctx.status(201).json(order);
         });
     }
 

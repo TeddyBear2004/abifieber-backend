@@ -39,7 +39,7 @@ public class ProductRoutes {
             transaction = session.beginTransaction();
             session.persist(product);
             transaction.commit();
-            ctx.status(201);
+            ctx.status(201).json(product);
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();

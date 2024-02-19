@@ -59,7 +59,7 @@ public class UserRoutes {
             Transaction transaction = session.beginTransaction();
             session.persist(user);
             transaction.commit();
-            ctx.status(201);
+            ctx.status(201).json(user);
         });
     }
 }
